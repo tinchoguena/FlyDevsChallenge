@@ -52,10 +52,10 @@ Android
 Click the let's go button, a full list of pokemons will load, start typing on the input and your list will start to filter.
 
 
-![Start Screen](/asstets/startScreen.png)
+![](src/asstets/startScreen.png)
 
 
-![Pokemons Screen](/asstets/PokemonsScreen.png)
+![](src/asstets/PokemonsScreen.png)
 
 
 
