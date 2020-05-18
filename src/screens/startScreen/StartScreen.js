@@ -16,18 +16,14 @@ import {
 
 import Colors from '../../constants/Colors';
 
-import {fetchPokemon, fetchTest} from '../../store/services/fetchPokemon';
+import {fetchPokemon} from '../../store/services/fetchPokemon';
 
 const StartScreen = ({navigation}) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPokemon());
   });
-  const fetchTestFunc = async () => {
-    const d = await fetchTest();
-    return d;
-  };
-  console.log('retunr on fetch', fetchTestFunc());
+
   return (
     <StartView>
       <PokeImage source={require('../../asstets/Pokeball.png')} />

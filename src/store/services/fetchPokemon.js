@@ -37,17 +37,14 @@ export const fetchPokemon = () => {
 };
 
 export const fetchTest = async () => {
-  let err;
   let data;
   try {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=900');
+    const response = await fetch(
+      'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20',
+    );
     data = await response.json();
-    const res = [...data];
-    // console.log('RESPONSE on test fetch', data);
-    return res;
+    return data.results;
   } catch (e) {
-    err = 'There is an error getting the pokemons';
-    console.log('ERROR', err);
-    return null;
+    console.log('ERROR ON FETCH TEST', e);
   }
 };
