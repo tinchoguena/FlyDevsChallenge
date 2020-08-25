@@ -22,8 +22,10 @@ const StartScreen = ({navigation}) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPokemon());
-  });
-
+  },[]);
+const navigateToPokemonScreen = () => {
+  navigation.navigate({routeName: 'PokemonScreen'});
+}
   return (
     <StartView>
       <PokeImage source={require('../../asstets/Pokeball.png')} />
@@ -32,9 +34,7 @@ const StartScreen = ({navigation}) => {
         <TitleWhite>Finder</TitleWhite>
       </TitleContainer>
       <ButtonContainer
-        onPress={() => {
-          navigation.navigate({routeName: 'PokemonScreen'});
-        }}>
+        onPress={navigateToPokemonScreen}>
         <SearchIcon name="search" size={16} color={Colors.solid} />
         <SearchTextButton
           color={Platform.OS === 'android' ? Colors.secondary : Colors.solid}>

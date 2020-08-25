@@ -24,7 +24,7 @@ const PokemonFinderScreen = ({navigation}) => {
   const [pokemonName, setPokemonName] = useState('');
   const [filteredList, setFilteredList] = useState(null);
 
-  const pokemonFullList = useSelector((state) => state.pokemonFilteredList);
+  const pokemonFullList = useSelector((state) => state.pokemonList);
   const loading = useSelector((state) => state.loading);
   const errorMsj = useSelector((state) => state.error);
 
@@ -43,12 +43,15 @@ const PokemonFinderScreen = ({navigation}) => {
     setPokemonName(text);
   };
 
+  const goBackNavigator = () => {
+    navigation.goBack();
+
+  }
+
   return (
     <StartView>
       <GoBack
-        onPress={() => {
-          navigation.goBack();
-        }}>
+        onPress={goBackNavigator}>
         <Icon name="chevron-left" size={20} color={Colors.secondary} />
       </GoBack>
       <KeyboardWrapper behavior={Platform.OS === 'ios' ? 'height' : null}>

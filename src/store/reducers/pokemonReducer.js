@@ -23,7 +23,6 @@ const pokemonReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemonList: action.list,
-        pokemonFilteredList: action.list,
         loading: false,
         error: '',
       };
